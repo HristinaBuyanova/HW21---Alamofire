@@ -14,6 +14,9 @@
 		6E3D0C2A2B67AA130021D259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3D0C282B67AA130021D259 /* Main.storyboard */; };
 		6E3D0C2C2B67AA160021D259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E3D0C2B2B67AA160021D259 /* Assets.xcassets */; };
 		6E3D0C2F2B67AA160021D259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E3D0C2D2B67AA160021D259 /* LaunchScreen.storyboard */; };
+		6EA8565F2B67D93B00B87E34 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8565E2B67D93B00B87E34 /* Cell.swift */; };
+		6EA856622B67E3B700B87E34 /* MagicCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */; };
+		6EA856642B67E62500B87E34 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856632B67E62500B87E34 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		6E3D0C2B2B67AA160021D259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E3D0C2E2B67AA160021D259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6E3D0C302B67AA160021D259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA8565E2B67D93B00B87E34 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardsModel.swift; sourceTree = "<group>"; };
+		6EA856632B67E62500B87E34 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		7505009AF29483DE4088AC49 /* Pods-HW21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW21.debug.xcconfig"; path = "Target Support Files/Pods-HW21/Pods-HW21.debug.xcconfig"; sourceTree = "<group>"; };
 		B4268BF1FBD4D5C0B136A7F3 /* Pods_HW21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,7 +107,10 @@
 		6EA8565C2B67AD6A00B87E34 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6EA856602B67E38800B87E34 /* Model */,
 				6E3D0C262B67AA130021D259 /* ViewController.swift */,
+				6EA8565E2B67D93B00B87E34 /* Cell.swift */,
+				6EA856632B67E62500B87E34 /* DetailView.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -113,6 +122,14 @@
 				6E3D0C242B67AA130021D259 /* SceneDelegate.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		6EA856602B67E38800B87E34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FDECDC5F328E422B2B537FA4 /* Frameworks */ = {
@@ -238,7 +255,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA856622B67E3B700B87E34 /* MagicCardsModel.swift in Sources */,
+				6EA856642B67E62500B87E34 /* DetailView.swift in Sources */,
 				6E3D0C272B67AA130021D259 /* ViewController.swift in Sources */,
+				6EA8565F2B67D93B00B87E34 /* Cell.swift in Sources */,
 				6E3D0C232B67AA130021D259 /* AppDelegate.swift in Sources */,
 				6E3D0C252B67AA130021D259 /* SceneDelegate.swift in Sources */,
 			);
