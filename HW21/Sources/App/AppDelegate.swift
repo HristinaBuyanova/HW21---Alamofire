@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  HW21
-//
-//  Created by Христина Буянова on 29.01.2024.
-//
+
 
 import UIKit
 
