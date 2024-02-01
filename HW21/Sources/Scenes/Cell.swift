@@ -11,9 +11,10 @@ class Cell: UITableViewCell {
 
     static let identifier = "cell"
 
-    var model: MagicCards? {
+    var model: ParametrCard? {
            didSet {
-               
+               nameLabel.text = model?.name
+               artistLabel.text = model?.artist
            }
        }
 
@@ -64,14 +65,19 @@ class Cell: UITableViewCell {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             nameLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
 
-            artistLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 50),
+            artistLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             artistLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
 
             imageChevron.centerYAnchor.constraint(equalTo: centerYAnchor),
-            imageChevron.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 10),
+            imageChevron.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             imageChevron.heightAnchor.constraint(equalToConstant: 30),
             imageChevron.widthAnchor.constraint(equalToConstant: 30)
            ])
        }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.model = nil
+    }
 
 }

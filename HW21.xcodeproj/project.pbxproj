@@ -17,6 +17,8 @@
 		6EA8565F2B67D93B00B87E34 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8565E2B67D93B00B87E34 /* Cell.swift */; };
 		6EA856622B67E3B700B87E34 /* MagicCardsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */; };
 		6EA856642B67E62500B87E34 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856632B67E62500B87E34 /* DetailView.swift */; };
+		6EA856672B6972CD00B87E34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856662B6972CD00B87E34 /* NetworkManager.swift */; };
+		6EA856692B6ACB0A00B87E34 /* ImageLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA856682B6ACB0A00B87E34 /* ImageLoad.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6EA8565E2B67D93B00B87E34 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicCardsModel.swift; sourceTree = "<group>"; };
 		6EA856632B67E62500B87E34 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		6EA856662B6972CD00B87E34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6EA856682B6ACB0A00B87E34 /* ImageLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoad.swift; sourceTree = "<group>"; };
 		7505009AF29483DE4088AC49 /* Pods-HW21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HW21.debug.xcconfig"; path = "Target Support Files/Pods-HW21/Pods-HW21.debug.xcconfig"; sourceTree = "<group>"; };
 		B4268BF1FBD4D5C0B136A7F3 /* Pods_HW21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HW21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -107,6 +111,7 @@
 		6EA8565C2B67AD6A00B87E34 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				6EA856652B69726A00B87E34 /* Network */,
 				6EA856602B67E38800B87E34 /* Model */,
 				6E3D0C262B67AA130021D259 /* ViewController.swift */,
 				6EA8565E2B67D93B00B87E34 /* Cell.swift */,
@@ -130,6 +135,15 @@
 				6EA856612B67E3B700B87E34 /* MagicCardsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6EA856652B69726A00B87E34 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6EA856662B6972CD00B87E34 /* NetworkManager.swift */,
+				6EA856682B6ACB0A00B87E34 /* ImageLoad.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		FDECDC5F328E422B2B537FA4 /* Frameworks */ = {
@@ -258,7 +272,9 @@
 				6EA856622B67E3B700B87E34 /* MagicCardsModel.swift in Sources */,
 				6EA856642B67E62500B87E34 /* DetailView.swift in Sources */,
 				6E3D0C272B67AA130021D259 /* ViewController.swift in Sources */,
+				6EA856672B6972CD00B87E34 /* NetworkManager.swift in Sources */,
 				6EA8565F2B67D93B00B87E34 /* Cell.swift in Sources */,
+				6EA856692B6ACB0A00B87E34 /* ImageLoad.swift in Sources */,
 				6E3D0C232B67AA130021D259 /* AppDelegate.swift in Sources */,
 				6E3D0C252B67AA130021D259 /* SceneDelegate.swift in Sources */,
 			);

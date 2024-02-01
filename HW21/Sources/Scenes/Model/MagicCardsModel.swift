@@ -1,11 +1,11 @@
 
 import Foundation
 
-struct MagicCards: Codable {
+struct MagicCards: Decodable {
     let cards: [ParametrCard]
 }
 
-struct ParametrCard: Codable {
+struct ParametrCard: Decodable {
     let name: String
     let type: String
     let cmc: Int
