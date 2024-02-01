@@ -10,8 +10,7 @@ final class NetworkManager {
 
     func fetchCard(completion: @escaping ([ParametrCard]?) -> Void) {
         let request = AF.request("https://api.magicthegathering.io/v1/cards")
-        request.responseDecodable(of: MagicCards.self) {
-            response in
+        request.responseDecodable(of: MagicCards.self) { response in
             switch response.result {
             case .success(let success):
                 completion(success.cards)

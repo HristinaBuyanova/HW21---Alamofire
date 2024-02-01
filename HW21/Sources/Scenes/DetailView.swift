@@ -5,19 +5,17 @@ final class DetailView: UIViewController {
 
     var model: ParametrCard? {
         didSet {
-            nameLabel.text =  model?.name
-            typeLabel.text = model?.type
-            cmcLabel.text = "Манная стоимость \(String(describing: model?.cmc))"
+            nameLabel.text = model?.name
+            typeLabel.text = "Тип: " + (model?.type ?? "")
+            cmcLabel.text = "Манная стоимость: \(model?.cmc ?? 0)"
             rarityLabel.text = model?.rarity
-            artistLabel.text = model?.artist
-            idLabel.text = model?.id
+            artistLabel.text = "Автор: " + (model?.artist ?? "")
+            idLabel.text = "ID: " + (model?.id ?? "")
 
-            guard let imagePath = model?.imageURL,
-                  let imageURL = URL(string: imagePath) else {
+            guard let imagePath = model?.imageURL else {
                 imageView.image = UIImage(named: "нет карты")
                 return
             }
-//            ImageLoad.shared.loadImage(from: imageURL, imageView: imageView)
             ImageLoad.shared.loadImage(from: imagePath) { result in
                 switch result {
                 case .success(let data):
@@ -74,14 +72,6 @@ final class DetailView: UIViewController {
         return imageView
     }()
 
-//    private lazy var textLabel: UILabel = {
-//        let label = UILabel()
-//        label.font = .systemFont(ofSize: 14)
-//        label.textAlignment = .left
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        return label
-//    }()
-
     private lazy var artistLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14)
@@ -97,8 +87,6 @@ final class DetailView: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +105,6 @@ final class DetailView: UIViewController {
             view.addSubview(cmcLabel)
             view.addSubview(rarityLabel)
             view.addSubview(imageView)
-//            view.addSubview(textLabel)
             view.addSubview(artistLabel)
             view.addSubview(idLabel)
         }
@@ -141,9 +128,6 @@ final class DetailView: UIViewController {
                 imageView.widthAnchor.constraint(equalToConstant: 300),
                 imageView.heightAnchor.constraint(equalToConstant: 400),
 
-//                textLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//                textLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
-
                 artistLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 artistLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
 
@@ -151,21 +135,4 @@ final class DetailView: UIViewController {
                 idLabel.topAnchor.constraint(equalTo: artistLabel.bottomAnchor, constant: 10),
             ])
         }
-
-//    func configureView(model: ParametrCard) {
-//        nameLabel.text =  model.name
-//        typeLabel.text = model.type
-//        cmcLabel.text = String(model.cmc)
-//        rarityLabel.text = model.rarity
-////        textLabel.text = model.text
-//        artistLabel.text = model.artist
-//        idLabel.text = model.id
-//
-//        guard let imagePath = model.imageURL,
-//              let imageURL = URL(string: imagePath) else {
-//            imageView.image = UIImage(named: "нет карты")
-//            return
-//        }
-//        ImageLoad.shared.loadImage(from: imageURL, imageView: imageView)
-//        }
 }

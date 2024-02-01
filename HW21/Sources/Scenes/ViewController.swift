@@ -10,7 +10,7 @@ class ViewController: UIViewController {
 
     private lazy var seachBar: UISearchBar = {
         let seach = UISearchBar()
-        seach.placeholder = "Поиск"
+        seach.placeholder = "Поиск по названию карты..."
         seach.keyboardType = .webSearch
         seach.searchBarStyle = .minimal
         seach.delegate = self
@@ -55,6 +55,7 @@ class ViewController: UIViewController {
        private func setupHierrarchy () {
            view.addSubview(seachBar)
            view.addSubview(buttonSeach)
+//           view.addSubview(indicatorSeach)
            view.addSubview(tableView)
        }
 
@@ -70,13 +71,14 @@ class ViewController: UIViewController {
             buttonSeach.widthAnchor.constraint(equalToConstant: 100),
             buttonSeach.heightAnchor.constraint(equalToConstant: 40),
 
-               tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-               tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: buttonSeach.bottomAnchor, constant: 20),
-               tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
            ])
        }
 
+    // MARK: - Func
     func showAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -95,7 +97,7 @@ class ViewController: UIViewController {
     }
 
     func seachForCard(searchText: String) {
-        guard searchText.isEmpty else {
+        guard !searchText.isEmpty else {
             fetchCard()
             return
         }
@@ -113,8 +115,8 @@ class ViewController: UIViewController {
 
 @objc
     func buttonTapped() {
-        guard let seachText = seachBar.text, seachText.isEmpty else {
-            showAlert(message: "Введите запрос по картам")
+        guard let seachText = seachBar.text, !seachText.isEmpty else {
+            showAlert(message: "Введите название карты")
             return
         }
         searchActionHandler?(seachText)
@@ -123,6 +125,7 @@ class ViewController: UIViewController {
 
 }
 
+// MARK: - Extension
 extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
@@ -135,13 +138,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate, UISearchBa
         cell.model = card
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            model.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        }
-//    }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
